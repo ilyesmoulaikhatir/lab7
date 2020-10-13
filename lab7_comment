@@ -1,0 +1,30 @@
+2. utilisationd de la commande: gcc -Wall *.c testmax.exe
+
+3&4. Utilisation des commandes suivantes:
+     gcc -E max.c -o max.i
+     gcc -E testmax.c -o testmax.i
+     --> Utilisation du préprocesseur. Son rôle est de supprimer les commentaires, d'inclure les fichiers spécifiés avec la directive "#include", d'évaluer les macros cpp (cherche des directives de précompilation dans les fichiers sources[*.c et *.h]) et de modifier le fichier source en fonction de ces directives (remplacement syntaxique). Ainsi les fichiers préprocessés sont contenu dans leur fichier .i respectif.
+
+     gcc -S max.i
+     gcc -S testmax.i
+     --> Utilisation du compilateur. Le compilateur prend en ligne de commande le fichier à compiler. Il génère le code assembleur résultant de la compilation. Ainsi les fichiers assembleurs sont contenu dans leur fichier .s respectif.
+
+     gcc -c max.s
+     gcc -c testmax.s
+     --> Utilisation de l'assembleur qui va générer le fichier binaire. Le binaire est le code éxécutable par la machine.  Ainsi les fichiers binaires sont contenu dans leur fichier .o respectif.
+
+     liste des fichiers intermédiaies:
+     max.i
+     max.s
+     max.o
+     testmax.i
+     testmax.s
+     testmax.o
+
+5. Elle sera remplacé lors de l'édition de lien.
+
+6. Utilisation de la commande: gcc -Wall min.c testmin.c -o testmin.exe
+
+7. Utilisation de la commande: gcc -Wall var.c testvar.c -o testvar.exe
+
+8. Utilisation de la commande: gcc -Wall var.c max.c min.c test.c -o test.exe
